@@ -153,12 +153,13 @@ class MySaveFileThread(threading.Thread):
                         progress_checked_files = int(match_checked_files.group(1))
                         progress_total_check_files = int(match_checked_files.group(2))
                     progress_max_percentage_10 = max(progress_size_percentage_10, progress_file_percentage_10)
-                    message_progress = '<a href="https://drive.google.com/open?id={}">{}</a>\n' \
-                                       'Checks： <code>{} / {}</code>\n' \
-                                       'Transfers： <code>{} / {}</code>\n' \
-                                       'File size：<code>{} / {}</code>\n{}' \
-                                       'Speed：<code>{} ETA {}</code>\n' \
-                                       'Progress：<code>[{}] {: >4}%</code>' \
+                    message_progress = '╭─────────「<a href="https://drive.google.com/open?id={}">{}</a>」\n' \
+                                       '├ Checks： <code>{} / {}</code>\n' \
+                                       '├ Transfers： <code>{} / {}</code>\n' \
+                                       '├ File size：<code>{} / {}</code>\n{}' \
+                                       '├ Speed：<code>{} ETA {}</code>\n' \
+                                       '├ Progress：<code>[{}] {: >4}%</code>\n' \
+                                       '╰─────────「 Nemesis Clone 」' \
                         .format(
                         folder_id,
                         html.escape(destination_path),
@@ -168,7 +169,7 @@ class MySaveFileThread(threading.Thread):
                         progress_total_files,
                         progress_transferred_size,
                         progress_total_size,
-                        f'Speed：<code>{progress_speed_file}</code>\n' if is_fclone is True else '',
+                        f'├ Speed：<code>{progress_speed_file}</code>\n' if is_fclone is True else '',
                         progress_speed,
                         progress_eta,
                         '█' * progress_file_percentage_10 + '░' * (
