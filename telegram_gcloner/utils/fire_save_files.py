@@ -159,7 +159,8 @@ class MySaveFileThread(threading.Thread):
                                        '├ File size：<code>{} / {}</code>\n{}' \
                                        '├ Speed：<code>{} ETA {}</code>\n' \
                                        '├ Progress：<code>[{}] {: >4}%</code>\n' \
-                                       '╰─────────「 TechX Clone 」' \
+                                       '├─────────「 TechX Delta Clone 」' \
+                                       '╰─────────「 @techxelon 」' \
                         .format(
                         folder_id,
                         html.escape(destination_path),
